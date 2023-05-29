@@ -61,4 +61,11 @@ public class CarService {
         }
         return car;
     }
+    public boolean delete(int id){
+        Boolean respuesta = getCar(id).map(car ->{
+            carRepository.delete(car);
+            return true;
+        }).orElse(false);
+        return respuesta;
+    }
 }
