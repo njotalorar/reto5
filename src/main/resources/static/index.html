@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <script type="text/javascript" src="/webjars/bootstrap/jquery/jquery.min.js"></script>
+    <script type="text/javascript" src="/webjars/bootstrap/js/bootstrap.min.css"></script>
+    <title>Carros</title>
+</head>
+<body>
+<h1>Bienvenido a carros</h1>
+<div class="container unauthenticated">
+  Para iniciar sesión haz click <a href="/oauth2/authorization/github">aqui</a>
+</div>
+<div class="container unauthenticated" style="display: none">
+  Has sido autenticado: <span id="usario"></span>
+</div>
+</body>
+<script type="text/javascript">
+  $.get("/user", function (data){
+    $("#user").html(data.name);
+    $(".unauthenticated").hide()
+    $(".authenticated").show()
+  });
+</script>
+</html>
