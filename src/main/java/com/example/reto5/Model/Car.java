@@ -9,12 +9,14 @@ import java.util.List;
 @Table(name="car")
 public class Car {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column(name="id")
     private Integer idCar;
     private String name;
     private String brand;
     private Integer year;
     private String description;
+    //Relacion con la gama
     @ManyToOne
     @JoinColumn(name="idGama")
     @JsonIgnoreProperties("cars")
@@ -90,4 +92,3 @@ public class Car {
         this.reservations = reservations;
     }
 }
-

@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-@CrossOrigin("*")  //acepte todas las peticiones entrantes
+//@CrossOrigin("*")  //acepte todas las peticiones entrantes
 @RequestMapping("/api/Car")
 public class CarController {
     @Autowired
@@ -27,9 +27,7 @@ public class CarController {
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
-    public Car Save(@RequestBody Car car){
-        return carService.save(car);
-    }
+    public Car Save(@RequestBody Car car){return carService.save(car);}
 
     @PutMapping("/update")
     @ResponseStatus(HttpStatus.CREATED)

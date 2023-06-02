@@ -18,9 +18,7 @@ public class CarRepository {
     public Optional<Car> getCar(int id){
         return carCrudRepository.findById(id);
     }
-    public Car save(Car car){
-        return carCrudRepository.save(car);
-    }
+    public Car save(Car car){return carCrudRepository.save(car);}
     public void delete(Car car){
         carCrudRepository.delete(car);
     }
