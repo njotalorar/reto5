@@ -7,7 +7,8 @@ import javax.persistence.*;
 @Table(name="car")
 public class Message {
     @Id
-    @GeneratedValue(strategy= GenerationType.IDENTITY)
+    @GeneratedValue(strategy= GenerationType.SEQUENCE)
+    @Column(name="id")
     private Integer idMessage;
     private String messageText;
     @ManyToOne
